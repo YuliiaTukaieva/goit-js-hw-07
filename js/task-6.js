@@ -10,15 +10,16 @@ function getRandomHexColor() {
   function createBoxes(amount) {
       const boxes = document.querySelector(`div#boxes`);
       const initSize = 30;
+
+      const textItems = [];
       for (let i = 0; i < amount; i++) {
-       const dv = document.createElement("div");
-       boxes.append(dv);
-       const size = initSize + (i * 10);
-       dv.style.width= `${size}px`;
-       dv.style.height=`${size}px`;
-       dv.style.background = getRandomHexColor();
+        const size = initSize + (i * 10);
+        const newItem = `<div style="height:${size}px; width:${size}px; background:${getRandomHexColor()}"></div>`;
+        textItems.push(newItem);
       }
-  }
+
+      boxes.insertAdjacentHTML('beforeend', textItems.join(''));
+    }
 
     btnCreate.addEventListener('click', function() {
       const input = document.querySelector(`#controls>input`);
