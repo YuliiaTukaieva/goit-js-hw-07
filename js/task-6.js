@@ -9,11 +9,10 @@ function getRandomHexColor() {
 
   function createBoxes(amount) {
       const boxes = document.querySelector(`div#boxes`);
-      const initSize = 30;
 
       const textItems = [];
       for (let i = 0; i < amount; i++) {
-        const size = initSize + (i * 10);
+        const size = 30 + (i * 10);
         const newItem = `<div style="height:${size}px; width:${size}px; background:${getRandomHexColor()}"></div>`;
         textItems.push(newItem);
       }
